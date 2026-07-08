@@ -1,0 +1,23 @@
+name: HTML Deployment Workflow
+
+on:
+  push:
+    paths:
+      - '**/*.html'
+
+jobs:
+  html-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Show Current Directory
+        run: pwd
+
+      - name: List Repository Files
+        run: ls -la
+
+      - name: HTML File Updated
+        run: echo "HTML file has been updated successfully!"
